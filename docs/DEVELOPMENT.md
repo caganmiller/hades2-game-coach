@@ -52,4 +52,4 @@ The packager reads the built executable plus an explicit list of repository reso
 
 Keep the automatic watcher local-only, keep saves read-only, and never treat an offered/highlighted choice as proof of acquisition. Preserve unknown values in older history. Do not commit fixtures from a player's real profile.
 
-No model weights, engine binaries, downloaded packages, game art, or Windows SDK assemblies are vendored. Dependency publishers retain their own licenses. This private preview has no open-source redistribution license.
+No model weights, engine binaries, downloaded packages, game-art packs, or Windows SDK assemblies are vendored. The documentation gallery contains approved example images with game artwork. Dependency publishers retain their own licenses. This preview has no open-source redistribution license.

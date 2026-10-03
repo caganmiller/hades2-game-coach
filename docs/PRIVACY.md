@@ -41,4 +41,6 @@ DPAPI binds a saved key to a Windows user; it is not a portable credential-trans
 
 Reports contain gameplay information you explicitly export and may embed captured victory imagery or imported art. They do not contain the OpenAI key. Share creates local files/clipboard content; it does not automatically publish them.
 
-Never upload a live app folder, logs, saved settings, encrypted key files, save files, screenshots, or cached audio as a release. The repository ignore rules are a secondary safeguard; `scripts/package.py` uses a fixed allowlist and is the supported packaging path. The initial repository contains only source, original app branding, scripts, synthetic tests, and documentation. No personal game fixtures are used in the shipped tests.
+Never upload a live app folder, logs, saved settings, encrypted key files, save files, screenshots, or cached audio as a release. The repository ignore rules are a secondary safeguard; `scripts/package.py` uses a fixed allowlist and is the supported packaging path. No personal game fixtures are used in the shipped tests.
+
+The public documentation includes a [screenshot gallery](SCREENSHOTS.md) approved by the player. It shows selected app views, a Night 44 run report, and overlay card examples. These reviewed images are separate from the clean portable release. They do not include credentials, raw saves, logs, audio, or conversation history; the underlying personal report and profile files are not published.

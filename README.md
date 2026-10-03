@@ -8,6 +8,14 @@ Created by **Caganmiller** · [Inquiries](mailto:caganmiller@gmail.com)
 
 **Preview release.** This is a portable app, with source included in this repository. Local model weights, the inference engine, your API key, and game artwork are separate. The clean download contains no player settings, credentials, run history, screenshots, recordings, or developer logs.
 
+## A look inside
+
+| Plan your next run | Share the story afterward |
+| --- | --- |
+| [![Build planner showing unlocked routes](docs/images/app-build-planner.png)](docs/SCREENSHOTS.md#pick-your-build) | [![Interactive HTML report with boon level and effect details](docs/images/html-item-detail.jpg)](docs/SCREENSHOTS.md#boon-details) |
+
+**[Explore the full screenshot gallery →](docs/SCREENSHOTS.md)** — the coach, build planner, run history, interactive HTML report, and boon/boss cards. App views use an isolated demonstration profile; overlay cards are captures of the real renderer, with their source explained in the gallery. The approved example images are documentation only and are not included in the portable app ZIP.
+
 ## Install in six steps
 
 1. **Download the app** from [Releases](https://github.com/caganmiller/hades2-game-coach/releases/latest): choose `hades2-game-coach-v0.1.0-windows.zip`. GitHub's automatic “Source code” downloads are for building the app yourself. Extract the entire app ZIP to a writable folder such as `Documents\Hades2GameCoach`; do not run it from inside the ZIP or put it in Program Files.
@@ -41,7 +49,7 @@ Asking the cloud coach sends the question, relevant run context, and a capture o
 
 ## Optional extras
 
-- **Original item icons:** run the included importer against your own Hades II installation. No Supergiant artwork is included in this repository or app ZIP. Text, levels, descriptions, and reports work without imported icons. [Import instructions](docs/INSTALL.md#optional-import-item-icons).
+- **Original item icons:** run the included importer against your own Hades II installation. No extracted icon pack is bundled; gallery images show the optional artwork in use. Text, levels, descriptions, and reports work without imported icons. [Import instructions](docs/INSTALL.md#optional-import-item-icons).
 - **PDF and full share ZIP:** install Python 3 and ReportLab, then set `pdf-python.txt` beside the app. HTML, PNG, text, and CSV do not need Python. [PDF setup](docs/INSTALL.md#optional-pdf-export).
 
 ## Current limits
@@ -50,4 +58,4 @@ This release was built and checked on a Windows ARM64 development machine with a
 
 Visual guidance can be late or uncertain. Check the actual offer and current build. Older run history may omit exact levels, times, or effects; the app labels missing data instead of inventing it. Community routes are starting points, not guaranteed speedrun rankings. The executable is unsigned, so Windows may show publisher/reputation warnings; it is not a Microsoft Store package.
 
-Independent fan companion; not affiliated with or endorsed by Supergiant Games, OpenAI, Nous Research, NVIDIA, or model/runtime publishers. See [third-party notices](THIRD_PARTY_NOTICES.md). No open-source license is granted in this preview; access to this private repository does not change third-party rights.
+Independent fan companion; not affiliated with or endorsed by Supergiant Games, OpenAI, Nous Research, NVIDIA, or model/runtime publishers. See [third-party notices](THIRD_PARTY_NOTICES.md). No open-source license is granted in this preview; public access to this repository does not change third-party rights.

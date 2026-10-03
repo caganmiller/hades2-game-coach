@@ -2,7 +2,7 @@
 
 Game Coach's creator credit is **Caganmiller** ([inquiries](mailto:caganmiller@gmail.com)). The app mark and navigation glyphs are original application artwork.
 
-Hades II, its characters, names, game content, item artwork, and screenshots belong to **Supergiant Games**. This is an independent fan companion, with no claim of affiliation or endorsement. No extracted game artwork, game packages, localization files, save files, or player screenshots are included in this source tree or clean release. The optional icon importer reads the user's installed game locally. Locally generated reports can contain game imagery.
+Hades II, its characters, names, game content, item artwork, and screenshots belong to **Supergiant Games**. This is an independent fan companion, with no claim of affiliation or endorsement. The [documentation gallery](docs/SCREENSHOTS.md) includes player-approved example screenshots and rendered UI views containing game item art. No extracted icon pack, game package, localization file, or save file is bundled. The clean portable release contains no player screenshots or game-art pack. The optional icon importer reads the user's installed game locally. Locally generated reports can contain game imagery.
 
 These external components are installed separately and governed by their own publishers' terms and licenses:
 
@@ -18,4 +18,4 @@ The independent read-only save decoder cites format references from [hades2-tool
 
 Build route entries retain their community source links in `BuildPlanner.cs`. Routes are adapted suggestions, not endorsements or a promise of current leaderboard performance.
 
-This private preview does not grant an open-source license to the app. Third-party material and dependencies retain their respective rights; the creator credit is not a claim of ownership over them.
+This preview does not grant an open-source license to the app. Third-party material and dependencies retain their respective rights; the creator credit is not a claim of ownership over them.
