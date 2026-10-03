@@ -1,0 +1,49 @@
+# Generated builds and packaging tests
+/build/
+/dist/
+/test-output/
+*.exe
+*.dll
+*.pdb
+*.zip
+*.pyc
+__pycache__/
+.venv/
+
+# Credentials, recordings, configuration, and player data — never commit
+*.dpapi
+.env
+.env.*
+settings.json
+local-model.json
+pdf-python.txt
+run-memory.json
+run-moments.json
+coach-journal.json
+usage-history.json
+*.log
+*diagnostic*.json
+verification.txt
+run-history/
+run-archive/
+run-snapshots/
+voice-cache/
+runtime/
+models/
+*.gguf
+*.sav
+*.sjson
+*.wav
+*.pcm
+*.lnk
+
+# Artwork imported by each player from their own game
+assets/boons/
+assets/boon-icons.json
+assets/ARTWORK.txt
+
+# Local editor state
+.vs/
+.vscode/
+Thumbs.db
+Desktop.ini

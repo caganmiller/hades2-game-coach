@@ -1,0 +1,26 @@
+﻿using System;using System.IO;using System.Linq;using System.Text;using System.Net;using System.Drawing;using System.Drawing.Drawing2D;using System.Drawing.Imaging;using System.Globalization;using System.Collections.Generic;
+namespace GameCoach {
+static class RecapPresentation {
+ static string H(string s){return WebUtility.HtmlEncode(s??"");}
+ internal static string Time(double? seconds){if(!seconds.HasValue)return "Not recorded";long ticks=(long)Math.Round(Math.Max(0,seconds.Value)*100);return (ticks/6000).ToString("00")+":"+(ticks/100%60).ToString("00")+"."+(ticks%100).ToString("00");}
+ static string Chips(IEnumerable<RecapItem> items){return string.Join("",items.Select(i=>"<span class='chip "+H((i.rarity??"").ToLowerInvariant())+"'>"+H(i.name)+"<small>"+H(RecapDetails.Rarity(i))+"</small></span>"));}
+ static string Bars(DamageRow[] rows,string label,string extra){var s=new StringBuilder("<article class='panel'><p class='eyebrow'>"+H(label)+"</p>");if(rows==null||rows.Length==0)s.Append("<p class='muted'>Not retained for this night.</p>");else{double max=Math.Max(1,rows.Max(r=>r.amount));foreach(var row in rows.Take(5))s.Append("<div class='barrow'><div><span>"+H(row.name)+"</span><strong>"+RunArchive.Number(row.amount)+"</strong></div><div class='track'><i style='width:"+(100*row.amount/max).ToString("0.0",CultureInfo.InvariantCulture)+"%'></i></div></div>");}return s.Append("<small>"+H(extra)+"</small></article>").ToString();}
+ internal static string Html(RunRecap r){return RunHtml.Render(r);}
+ internal static string ExportCard(RunRecap r){
+  var groups=RunArchive.Groups(r).Take(3).ToArray();using(var title=new Font("Georgia",62,FontStyle.Regular,GraphicsUnit.Pixel))using(var heading=new Font("Segoe UI Semibold",30,FontStyle.Regular,GraphicsUnit.Pixel))using(var body=new Font("Segoe UI",24,FontStyle.Regular,GraphicsUnit.Pixel))using(var small=new Font("Segoe UI",18,FontStyle.Regular,GraphicsUnit.Pixel)){
+   var heights=new List<int>();using(var measure=new Bitmap(10,10))using(var g=Graphics.FromImage(measure)){foreach(var group in groups)heights.Add(128+(int)g.MeasureString(string.Join(" + ",group.items.Select(i=>i.name)),body,1020).Height+(int)g.MeasureString(group.condition,small,1020).Height);}
+   int panelY=390+heights.Sum()+groups.Length*18;int height=panelY+420;using(var image=new Bitmap(1200,height))using(var g=Graphics.FromImage(image)){
+    g.SmoothingMode=SmoothingMode.AntiAlias;g.TextRenderingHint=System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;using(var bg=new LinearGradientBrush(new Rectangle(0,0,1200,height),Color.FromArgb(24,61,59),Color.FromArgb(8,23,29),90f))g.FillRectangle(bg,0,0,1200,height);
+    using(var gold=new SolidBrush(Color.FromArgb(231,213,157)))using(var mint=new SolidBrush(Color.FromArgb(132,218,184)))using(var ink=new SolidBrush(Color.FromArgb(235,240,230)))using(var muted=new SolidBrush(Color.FromArgb(174,197,188)))using(var panel=new SolidBrush(Color.FromArgb(18,41,47)))using(var pen=new Pen(Color.FromArgb(115,161,133),2)){
+     g.DrawRectangle(pen,28,28,1144,height-56);g.DrawString("THE CHRONICLES / NIGHT "+r.number+" / "+r.route.ToUpperInvariant(),small,mint,64,60);g.DrawString(r.cleared?"Victory earned.":"The next night awaits.",title,gold,58,96);g.DrawString(r.weapon+" · "+r.aspect,body,ink,new RectangleF(64,183,1070,65));
+     string[] labels={r.cleared?"CLEAR TIME":"GAMEPLAY TIME","FEAR","DAMAGE TAKEN"};string[] values={Time(r.victorySeconds??r.seconds),RunArchive.Number(r.fear),RunArchive.Number(r.damageTaken)};for(int i=0;i<3;i++){int x=64+i*360;g.DrawString(labels[i],small,mint,x,275);g.DrawString(values[i],heading,ink,new RectangleF(x,303,340,50));}
+     int y=390;for(int i=0;i<groups.Length;i++){var group=groups[i];g.FillRectangle(panel,64,y,1072,heights[i]);g.DrawLine(pen,64,y,64,y+heights[i]);g.DrawString((i+1).ToString("00")+" / "+group.title,heading,gold,88,y+18);string names=string.Join(" + ",group.items.Select(v=>v.name));float nh=g.MeasureString(names,body,1020).Height;g.DrawString(names,body,ink,new RectangleF(88,y+65,1020,nh+6));g.DrawString(group.condition,small,muted,new RectangleF(88,y+83+nh,1020,heights[i]-98-nh));y+=heights[i]+18;}
+     if(groups.Length==0)g.DrawString("Full recorded loadout and results are in the HTML recap.",body,ink,64,y-15);
+     g.DrawString("DAMAGE LEADERS",small,mint,64,panelY+14);g.DrawString("PRESSURE POINTS",small,mint,650,panelY+14);for(int side=0;side<2;side++){int x=side==0?64:650;var rows=(side==0?r.inflicted:r.suffered)??new DamageRow[0];for(int i=0;i<Math.Min(3,rows.Length);i++){g.DrawString(rows[i].name,body,ink,new RectangleF(x,panelY+53+i*67,395,35));g.DrawString(RunArchive.Number(rows[i].amount),small,gold,x,panelY+85+i*67);}if(rows.Length==0)g.DrawString("Not retained",body,muted,x,panelY+60);}
+     g.DrawString(AppCredits.ShareCredit.ToUpperInvariant(),small,mint,64,height-116);g.DrawString("Listed damage sources are measured separately from synergy explanations.",small,muted,64,height-83);g.DrawString("See the full recap for all components, conditions and your victory screen.",small,muted,64,height-56);
+    }Directory.CreateDirectory(RunArchive.DirectoryPath);string file=Path.Combine(RunArchive.DirectoryPath,RunArchive.Stem(r)+"-share.png");image.Save(file,ImageFormat.Png);return file;
+   }
+  }
+ }
+}
+}
