@@ -2,9 +2,23 @@
 
 # Hades II Game Coach · The Crossroads
 
-A Windows companion that combines local screen reading and save checkpoints with an on-demand voice coach. Choose a build, compare offered boons, get boss introduction tips, and turn completed or failed attempts into shareable run stories.
+**Hybrid AI for Hades II: local observation, cloud conversation, one persistent build.**
+
+A Windows companion that keeps the recurring work on your PC. Local vision and OCR read decision screens; read-only game-save checkpoints ground the build memory. Ask the cloud voice coach for strategy, explanations, or deeper research, with that same build context. Afterward, share a run report that explains how the pieces worked together.
 
 Created by **Caganmiller** · [Inquiries](mailto:caganmiller@gmail.com)
+
+## Hybrid AI in action · the last 24 hours
+
+[![Game Coach Activity: last 24 hours, 473 local requests, 63 cloud requests, 88 percent of recorded requests local](docs/images/hybrid-activity-24h.png)](docs/SCREENSHOTS.md#hybrid-ai-in-action)
+
+**473 local requests · 63 cloud requests · 88% of recorded requests local.** A real development-machine snapshot, October 2–3, 2026, ending at 7:45 p.m. EDT. Mint shows local model requests; gold shows cloud API requests. Bar height is accumulated request duration in seconds, including queues and transfer. This is request activity, not GPU utilization, an API bill, or a measured cost-saving percentage. [Sample coverage and outcomes](docs/SCREENSHOTS.md#reading-the-24-hour-snapshot).
+
+| Work on your PC | Cloud when you call the coach | A shared understanding of the run |
+| --- | --- | --- |
+| Local vision, OCR, wake detection, save reading, and automatic choice/boss guidance | Question transcription, contextual coaching, streamed speech, and web research when needed | Equipped weapon and Arcana, confirmed choices, build targets, and synergy-based run reports |
+
+Automatic watching has **no cloud fallback**. Idle wake listening makes no API calls. Local inference still consumes your PC's memory and compute; optional start/victory greetings use cloud speech. The app starts its configured local engine, so Hermes is optional. [See the full data flow](docs/PRIVACY.md).
 
 **Preview release.** This is a portable app, with source included in this repository. Local model weights, the inference engine, your API key, and game artwork are separate. The clean download contains no player settings, credentials, run history, screenshots, recordings, or developer logs.
 
@@ -12,9 +26,9 @@ Created by **Caganmiller** · [Inquiries](mailto:caganmiller@gmail.com)
 
 | Plan your next run | Share the story afterward |
 | --- | --- |
-| [![Build planner showing unlocked routes](docs/images/app-build-planner.png)](docs/SCREENSHOTS.md#pick-your-build) | [![Interactive HTML report with boon level and effect details](docs/images/html-item-detail.jpg)](docs/SCREENSHOTS.md#boon-details) |
+| [![Build planner showing unlocked routes](docs/images/app-build-planner.png)](docs/SCREENSHOTS.md#pick-your-build) | [![Run report explaining Blast engine and Magick into Hitch damage synergies](docs/images/html-synergies.jpg)](docs/SCREENSHOTS.md#synergies) |
 
-**[Explore the full screenshot gallery →](docs/SCREENSHOTS.md)** — the coach, build planner, run history, interactive HTML report, and boon/boss cards. App views use an isolated demonstration profile; overlay cards are captures of the real renderer, with their source explained in the gallery. The approved example images are documentation only and are not included in the portable app ZIP.
+**[Explore the full screenshot gallery →](docs/SCREENSHOTS.md)** — hybrid activity, the coach, build planner, run history, synergy reports, interactive boon details, and boon/boss cards. App views use an isolated profile; overlay cards are captures of the real renderer, with their source explained in the gallery. The approved example images are documentation only and are not included in the portable app ZIP.
 
 ## Install in six steps
 
