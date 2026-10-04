@@ -1,4 +1,12 @@
-# Release validation · v0.1.0
+# Release validation · v0.1.1
+
+The v0.1.1 update removes URLs and citation markup from spoken replies while preserving written sources. It also removes automatic window restoration after an answer, so the coach stays minimized until you reopen it.
+
+- 3,675 offline speech assertions passed across URL formats, Markdown links, citation markers, numeric build details, varied streaming chunk sizes, early sentence delivery, and interruption.
+- The speech queue receives cleaned advice, and a citation-only chunk creates no speech request.
+- The updated application compiled successfully. The installed app resumed its existing run minimized; source review confirmed that reply completion, failure, and cancellation no longer restore the window.
+
+The clean-distribution checks below cover the portable release. UI, PDF, and icon-import checks were established for v0.1.0; those features are unchanged in this patch.
 
 Tested on a Windows machine with at least 64 GB of unified memory during preparation of the clean preview release.
 

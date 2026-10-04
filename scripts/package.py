@@ -5,7 +5,7 @@ from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 
 REPO = Path(__file__).resolve().parent.parent
-VERSION = '0.1.0'
+VERSION = '0.1.1'
 PACKAGE = f'hades2-game-coach-v{VERSION}-windows'
 DOCS = ['INSTALL.md', 'USAGE.md', 'PRIVACY.md', 'DEVELOPMENT.md', 'VALIDATION.md']
 PUBLIC_REPO = 'https://github.com/caganmiller/hades2-game-coach'

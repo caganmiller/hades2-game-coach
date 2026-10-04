@@ -19,7 +19,7 @@ powershell -NoProfile -File scripts/build.ps1 -Tests -OutputDirectory build/chec
 .\build\checks\DistributionChecks.exe
 ```
 
-These checks use synthetic run data in an isolated directory. They check clean defaults, absence of credentials/history, loopback-only inference, report escaping, missing-icon behavior, and run archival. They do not call cloud models, open the microphone, or capture the desktop. For a separate clean UI preview:
+These checks use synthetic run data in an isolated directory. They check clean defaults, absence of credentials/history, loopback-only inference, report escaping, missing-icon behavior, and run archival. Speech checks cover URL/citation removal, streamed link boundaries, preserved boon names and numbers, early playback, and interruption. They do not call cloud models, open the microphone, or capture the desktop. For a separate clean UI preview:
 
 ```powershell
 .\build\checks\DistributionChecks.exe --ui
