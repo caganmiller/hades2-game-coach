@@ -8,6 +8,8 @@
 4. Say **“coach”**, wait for the rising tone, then ask. `Ctrl+Alt+L` starts a voice question without the wake phrase. Typed questions are available on the Coach page.
 5. Say **“thanks”** to silence the current spoken response without ending the run. Say **“coach”** again to interrupt and ask something new. **Pause coaching** stops both microphone listening and watching and preserves memory.
 
+Game Coach stays minimized after answering so it cannot pull you out of the game. Reopen it from the taskbar whenever you want to read a reply. Web source links stay in the written answer; the voice skips URLs and citation markup.
+
 ## Useful things to say
 
 - “I'm starting the run. Here's my setup.” Start a setup review and show your equipped screens for a few seconds each. The coach distinguishes equipped items from the other options on screen.

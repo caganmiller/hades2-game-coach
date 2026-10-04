@@ -29,7 +29,7 @@ $references = @(
     'System.Drawing.dll', 'System.Web.Extensions.dll', 'System.Net.Http.dll', 'System.Security.dll', 'Microsoft.CSharp.dll'
 ) | ForEach-Object { "/reference:$_" }
 $sources = Get-ChildItem -LiteralPath (Join-Path $repoRoot 'src') -Filter '*.cs' -File | Sort-Object Name | Select-Object -ExpandProperty FullName
-if ($Tests) { $sources += Join-Path $repoRoot 'tests\DistributionChecks.cs' }
+if ($Tests) { $sources += Get-ChildItem -LiteralPath (Join-Path $repoRoot 'tests') -Filter '*.cs' -File | Sort-Object Name | Select-Object -ExpandProperty FullName }
 & $compiler @options @references @sources
 if ($LASTEXITCODE -ne 0) { throw 'Compilation failed.' }
 New-Item -ItemType Directory -Path (Join-Path $outputRoot 'assets') -Force | Out-Null

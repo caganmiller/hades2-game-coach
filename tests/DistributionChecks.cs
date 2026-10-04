@@ -18,6 +18,7 @@ class DistributionChecks {
             Native.SetProcessDPIAware();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            SpeechSourceChecks.Run();
             Check(Store.Key() == "" && !File.Exists(Path.Combine(Store.Root, "api-key.dpapi")), "new installation has no API credential");
             Check(RunMemory.Load().gameState == null && RunArchive.All().Length == 0, "new installation has no player build or run history");
             var settings = Store.Load();
