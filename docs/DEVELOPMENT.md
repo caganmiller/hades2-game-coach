@@ -50,6 +50,6 @@ The packager reads the built executable plus an explicit list of repository reso
 | `AppExperience.cs`, `WorkspaceUI.cs`, `GuidePages.cs`, `AppGlyph.cs` | Desktop navigation, controls, documentation and original artwork |
 | `Usage.cs`, `Sandbox.cs`, `RunMoments.cs`, `BoonArt.cs` | Metrics, experiments, greetings and optional imported icons |
 
-Keep the automatic watcher local-only, keep saves read-only, and never treat an offered/highlighted choice as proof of acquisition. Preserve unknown values in older history. Do not commit fixtures from a player's real profile.
+Keep the automatic watcher local-only and saves read-only. Record acquisitions from confirmed pickup or save evidence, and include historical values only when the retained data supports them. Use synthetic fixtures for committed tests.
 
 No model weights, engine binaries, downloaded packages, game-art packs, or Windows SDK assemblies are vendored. The documentation gallery contains approved example images with game artwork. Dependency publishers retain their own licenses. This preview has no open-source redistribution license.
