@@ -8,9 +8,9 @@ A Windows companion that keeps the recurring work on your PC. Local vision and O
 
 Created by **Caganmiller** · [Inquiries](mailto:caganmiller@gmail.com)
 
-## Hybrid AI in action · the last 24 hours
+## Hybrid AI Gaming Coach
 
-[![Game Coach Activity: last 24 hours, 473 local requests, 63 cloud requests, 88 percent of recorded requests local](docs/images/hybrid-activity-24h.png)](docs/SCREENSHOTS.md#hybrid-ai-in-action)
+[![Game Coach Activity: last 24 hours, 473 local requests, 63 cloud requests, 88 percent of recorded requests local](docs/images/hybrid-activity-24h.png)](docs/SCREENSHOTS.md#hybrid-ai-gaming-coach)
 
 **473 local requests · 63 cloud requests · 88% of recorded requests local.** A real development-machine snapshot, October 2–3, 2026, ending at 7:45 p.m. EDT. Mint shows local model requests; gold shows cloud API requests. Bar height is accumulated request duration in seconds, including queues and transfer. This is request activity, not GPU utilization, an API bill, or a measured cost-saving percentage. [Sample coverage and outcomes](docs/SCREENSHOTS.md#reading-the-24-hour-snapshot).
 

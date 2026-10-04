@@ -4,7 +4,7 @@
 
 Local AI observes the game. Cloud AI joins the conversation when you ask. Shared run memory connects both to the same equipment, choices, and plan. These player-approved examples show that hybrid approach in the Windows app and in an exported run report.
 
-## Hybrid AI in action
+## Hybrid AI Gaming Coach
 
 **The last 24 hours of recorded activity: 473 local requests, 63 cloud requests, 88% local.** The full-size Activity view makes the split visible: mint for the local model, gold for cloud API requests.
 
