@@ -14,7 +14,7 @@ Created by **Caganmiller** · [Inquiries](mailto:caganmiller@gmail.com)
 
 **88% local · 12% cloud across recorded requests in an example 24-hour period.** That's the value of the hybrid approach: ongoing observation can stay on your PC, while cloud requests bring conversation, explanations, and deeper advice when you want them. You can keep automatic guidance running without an API call for every screen read.
 
-The Activity view makes that balance visible—mint for local AI, gold for the cloud. This development example contains 473 local and 63 cloud requests, including testing and cancellations. Your balance will vary with how you play and how often you talk to the coach. [How to read the activity view](docs/SCREENSHOTS.md#about-the-activity-example).
+The Activity view makes that balance visible - mint for local AI, gold for the cloud. This development example contains 473 local and 63 cloud requests, including testing and cancellations. Your balance will vary with how you play and how often you talk to the coach. [How to read the activity view](docs/SCREENSHOTS.md#about-the-activity-example).
 
 | Your PC watches the game | The cloud joins the conversation | Both follow your build |
 | --- | --- | --- |
@@ -30,7 +30,7 @@ Automatic watching stays local, and listening for the wake word uses no API cred
 | --- | --- |
 | [![Build planner showing unlocked routes](docs/images/app-build-planner.png)](docs/SCREENSHOTS.md#pick-your-build) | [![Run report explaining Blast engine and Magick into Hitch damage synergies](docs/images/html-synergies.jpg)](docs/SCREENSHOTS.md#synergies) |
 
-**[Explore the screenshot gallery →](docs/SCREENSHOTS.md)** — see the coach, build planner, synergy reports, interactive boon details, and in-game advice cards. The gallery includes notes on how each example was captured.
+**[Explore the screenshot gallery →](docs/SCREENSHOTS.md)** - see the coach, build planner, synergy reports, interactive boon details, and in-game advice cards. The gallery includes notes on how each example was captured.
 
 ## What it does
 

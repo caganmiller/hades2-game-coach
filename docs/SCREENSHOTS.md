@@ -10,7 +10,7 @@ Follow a run from the first build idea to the final recap. Local AI watches your
 
 ![An example 24-hour period showing 88 percent local and 12 percent cloud requests](images/hybrid-activity-24h.png)
 
-The Activity view shows where that work happens—mint for local AI, gold for the cloud. In this development example, it recorded **473 local requests and 63 cloud requests**. Both sides use the same run context, so the voice coach can discuss the build the watcher is following. Your balance will vary with how you play and how often you ask for advice.
+The Activity view shows where that work happens - mint for local AI, gold for the cloud. In this development example, it recorded **473 local requests and 63 cloud requests**. Both sides use the same run context, so the voice coach can discuss the build the watcher is following. Your balance will vary with how you play and how often you ask for advice.
 
 ### About the activity example
 
