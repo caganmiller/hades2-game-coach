@@ -59,7 +59,7 @@ When you ask the coach, it receives your question, relevant build context, and a
 
 ## Current limits
 
-This preview supports English Hades II on Windows and has been checked on a high-memory Windows ARM64 machine with an NVIDIA/CUDA llama.cpp engine. Performance depends on your hardware, model, display setup, and game version; use the first-run checks to confirm your setup.
+This preview supports English Hades II on Windows and was tested on a Windows machine with at least 64 GB of unified memory. Performance depends on your hardware, model, display setup, and game version; use the first-run checks to confirm your setup.
 
 Fast screen changes can delay advice, and build updates follow the evidence available from the screen and game saves. Historical reports use the details preserved for each run. Treat community routes as a starting point and adapt them to the choices you receive. The Windows executable is unsigned, so you may see a publisher or reputation prompt when opening it.
 

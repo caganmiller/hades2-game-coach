@@ -8,6 +8,18 @@ REPO = Path(__file__).resolve().parent.parent
 VERSION = '0.1.0'
 PACKAGE = f'hades2-game-coach-v{VERSION}-windows'
 DOCS = ['INSTALL.md', 'USAGE.md', 'PRIVACY.md', 'DEVELOPMENT.md', 'VALIDATION.md']
+PUBLIC_REPO = 'https://github.com/caganmiller/hades2-game-coach'
+
+def release_bytes(path):
+    data = path.read_bytes()
+    if path.suffix.lower() == '.md':
+        # Keep gallery references usable without bundling player screenshots.
+        content = data.decode('utf-8')
+        for target in ('docs/SCREENSHOTS.md', 'SCREENSHOTS.md'):
+            content = content.replace('(' + target, '(' + PUBLIC_REPO + '/blob/main/docs/SCREENSHOTS.md')
+        content = content.replace('(docs/images/', '(https://raw.githubusercontent.com/caganmiller/hades2-game-coach/main/docs/images/')
+        data = content.encode('utf-8')
+    return data
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -30,7 +42,7 @@ def main():
     manifest = []
     with ZipFile(destination, 'w', ZIP_DEFLATED, compresslevel=9) as archive:
         for name, path in sorted(files.items()):
-            data = path.read_bytes()
+            data = release_bytes(path)
             archive.writestr(f'{PACKAGE}/{name}', data)
             manifest.append(f'{hashlib.sha256(data).hexdigest()}  {name}')
         archive.writestr(f'{PACKAGE}/MANIFEST.sha256', '\n'.join(manifest)+'\n')

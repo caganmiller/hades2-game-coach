@@ -37,6 +37,8 @@ python scripts/package.py
 
 The packager reads the built executable plus an explicit list of repository resources. It does not enumerate a live app folder. Output goes to ignored `dist`, containing the Windows ZIP and `SHA256SUMS.txt`; the ZIP includes per-file hashes. Validate the ZIP and inspect `git diff --cached` before every upload. Never commit generated binaries or archives to Git; attach only the allowlisted ZIP/checksum to a release.
 
+Gallery links and image references in the packaged guides point to the published online gallery. The app ZIP does not include those example screenshots.
+
 ## Code map
 
 | Source | Responsibility |
